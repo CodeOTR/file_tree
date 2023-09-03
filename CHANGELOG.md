@@ -1,3 +1,7 @@
+## 1.0.4
+- [Added] Added image for pub.dev
+- **Date**: 9-04-2023
+
 ## 1.0.3
 - [Changed] Shortened executable name to tree
 - **Date**: 9-04-2023
