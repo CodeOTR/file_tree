@@ -17,12 +17,19 @@ class Grow extends Command {
         'ascii',
         abbr: 'a',
         defaultsTo: false,
+        negatable: false,
         help: 'Use only ASCII characters to draw the tree.',
       )
       ..addFlag('emojis',
           abbr: 'e',
           defaultsTo: false,
-          help: 'Add emojis to the tree to indicate file types.');
+          negatable: false,
+          help: 'Add emojis to the tree to indicate file types.')
+      ..addFlag('include_hidden',
+          abbr: 'i',
+          defaultsTo: false,
+          negatable: false,
+          help: 'Include hidden files in the tree');
   }
 
   @override
@@ -34,11 +41,17 @@ class Grow extends Command {
   Future<void> _printFileTree(Directory directory, {String prefix = ''}) async {
     final ascii = argResults!['ascii'] as bool;
 
+    final includeHidden = argResults!['include_hidden'] as bool;
+
     final files = directory.listSync();
 
     for (var i = 0; i < files.length; i++) {
       final file = files[i];
       final isLast = i == files.length - 1;
+
+      if (!includeHidden && file.path.split(Platform.pathSeparator).last.startsWith('.')) {
+        continue;
+      }
 
       String lastBranchCharacter = ascii ? '`-- ' : '└── ';
       String branchCharacter = ascii ? '+-- ' : '├── ';
