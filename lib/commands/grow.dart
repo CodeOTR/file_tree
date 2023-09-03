@@ -26,7 +26,7 @@ class Grow extends Command {
           negatable: false,
           help: 'Add emojis to the tree to indicate file types.')
       ..addFlag('include_hidden',
-          abbr: 'i',
+          abbr: '',
           defaultsTo: false,
           negatable: false,
           help: 'Include hidden files in the tree');
@@ -68,11 +68,11 @@ class Grow extends Command {
       }
 
       stdout.write(
-          '${prefix}${isLast ? lastBranchCharacter : branchCharacter}${file.path.split(Platform.pathSeparator).last}');
+          '$prefix${isLast ? lastBranchCharacter : branchCharacter}${file.path.split(Platform.pathSeparator).last}');
       if (file is Directory) {
         stdout.writeln('/');
         await _printFileTree(file,
-            prefix: '${prefix}${isLast ? '    ' : prefixCharacter}');
+            prefix: '$prefix${isLast ? '    ' : prefixCharacter}');
       } else {
         stdout.writeln();
       }

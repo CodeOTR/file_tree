@@ -1,7 +1,9 @@
 name: file_tree
 description: Visualize the file tree of a directory.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/CodeOTR/file_tree
+homepage: https://codeontherocks.dev/
+# flutter pub publish --dry-run
 
 environment:
   sdk: ^3.1.0
