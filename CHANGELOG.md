@@ -1,3 +1,15 @@
+## 1.0.3
+- [Changed] Shortened executable name to tree
+- **Date**: 9-04-2023
+
+## 1.0.2
+- [Fixed] Added missing abbreviation for hidden files
+- **Date**: 9-04-2023
+
+## 1.0.1
+- [Changed] Updated pubspec to include CLI executable
+- **Date**: 9-04-2023
+
 ## 1.0.0
 - [Added] Initial release
 - **Date**: 9-04-2023

@@ -26,7 +26,7 @@ class Grow extends Command {
           negatable: false,
           help: 'Add emojis to the tree to indicate file types.')
       ..addFlag('include_hidden',
-          abbr: '',
+          abbr: 'i',
           defaultsTo: false,
           negatable: false,
           help: 'Include hidden files in the tree');
